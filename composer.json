@@ -1,0 +1,21 @@
+{
+    "name": "dvdpearson/nhl-schedule",
+    "description": "NHL 2014-15 schedule library for PHP using NHL.com website",
+    "keywords": ["nhl", "hockey", "schedule"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "David Pearson",
+            "email": "p8.david@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NHLSchedule\\": "src/"
+        },
+        "files": ["src/Schedule.php"]
+    }
+}
