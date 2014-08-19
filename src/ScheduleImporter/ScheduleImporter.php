@@ -19,6 +19,9 @@ class ScheduleImporter
      */
     private $xml;
 
+    /**
+     *
+     */
     public function __construct() {
         $this->xml = null;
     }
@@ -86,6 +89,9 @@ class ScheduleImporter
         return $this->xml;
     }
 
+    /**
+     * @param $filePath
+     */
     public function saveToFile($filePath)
     {
         $this->xml->save($filePath);
