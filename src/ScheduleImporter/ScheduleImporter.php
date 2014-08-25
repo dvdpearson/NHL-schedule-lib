@@ -53,7 +53,7 @@ class ScheduleImporter
             preg_match('|<!-- Home -->(.*?)<div class="teamName"><a style="border-bottom:1px dotted;" onclick="loadTeamSpotlight\(jQuery\(this\)\);" rel="(.*?)" shape="rect" href="javascript:void\(0\);">(.*?)</a></div></td>|si', $game, $homeTeam);
             preg_match('|<!-- Time -->(.*?)"skedStartTimeEST">(.*?) ET</div><div style="display:none;" class="skedStartTimeLocal">(.*?)</div></td>|si', $game, $time);
 
-            // Fixed Phoenix without link issue (because the team was recently sold)
+            // Fixed Phoenix link missing issue (because the team was recently bought)
             if (!isset($homeTeam[3])) {
                 preg_match('|<!-- Home -->(.*?)<div class="teamName">(.*?)</div></td>|si', $game, $homeTeam2);
                 $homeTeam[3] = $homeTeam2[2];
