@@ -70,6 +70,7 @@ class ScheduleImporter
             $game->appendChild($dom->createElement('hometeam', $homeTeam[3]));
         }
         $this->setXml($dom);
+        return true;
     }
 
     /**
@@ -94,6 +95,6 @@ class ScheduleImporter
      */
     public function saveToFile($filePath)
     {
-        $this->xml->save($filePath);
+        return $this->xml->save($filePath);
     }
 }

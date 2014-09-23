@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         syntaxCheck="false"
-         bootstrap="test/bootstrap.php"
-        >
+<phpunit bootstrap="tests/bootstrap.php">
     <testsuites>
         <testsuite name="NHLSchedule Tests">
-            <directory>./test/</directory>
+            <directory>./tests/NHLSchedule/Tests/</directory>
         </testsuite>
     </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory>./src/</directory>
-        </whitelist>
-    </filter>
 </phpunit>
