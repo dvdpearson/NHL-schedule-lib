@@ -22,7 +22,8 @@ class ScheduleImporter
     /**
      *
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->xml = null;
     }
 
@@ -30,7 +31,8 @@ class ScheduleImporter
      * @param string $season
      * @return string
      */
-    public function import($season = "20132014") {
+    public function import($season = "20132014")
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, str_replace('%season', $season, $this->srcURL));
         curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -72,7 +74,7 @@ class ScheduleImporter
         $this->setXml($dom);
         return true;
     }
-
+    
     /**
      * @param null $xml
      */
