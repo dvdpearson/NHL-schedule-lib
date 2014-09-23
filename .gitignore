@@ -1,3 +1,5 @@
 # PHPStorm
 /.idea/
+
+# Composer
 /vendor/
