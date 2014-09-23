@@ -1,5 +1,5 @@
 {
-    "name": "dvdpearson/nhl-schedule",
+    "name": "dvdpearson/nhl-schedule-lib",
     "description": "NHL 2014-15 schedule library for PHP using NHL.com website",
     "keywords": ["nhl", "hockey", "schedule"],
     "license": "BSD-3-Clause",
