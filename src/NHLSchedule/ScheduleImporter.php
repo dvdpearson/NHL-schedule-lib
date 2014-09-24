@@ -74,7 +74,7 @@ class ScheduleImporter
         $this->setXml($dom);
         return true;
     }
-    
+
     /**
      * @param null $xml
      */
@@ -90,6 +90,23 @@ class ScheduleImporter
     public function getXml()
     {
         return $this->xml;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSrcURL()
+    {
+        return $this->srcURL;
+    }
+
+    /**
+     * @param string $srcURL
+     */
+    public function setSrcURL($srcURL)
+    {
+        $this->srcURL = $srcURL;
+        return $this;
     }
 
     /**
