@@ -1,6 +1,6 @@
 <?php
-
 namespace NHLSchedule;
+
 use DOMDocument;
 
 /**
@@ -76,7 +76,8 @@ class ScheduleImporter
     }
 
     /**
-     * @param null $xml
+     * @param $xml
+     * @return null
      */
     public function setXml($xml)
     {
@@ -101,7 +102,8 @@ class ScheduleImporter
     }
 
     /**
-     * @param string $srcURL
+     * @param $srcURL
+     * @return $this
      */
     public function setSrcURL($srcURL)
     {
