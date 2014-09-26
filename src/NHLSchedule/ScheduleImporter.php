@@ -129,11 +129,15 @@ class ScheduleImporter
         return $this->setXml(simplexml_load_file($filePath));
     }
 
+    /**
+     * @param $team
+     * @return SimpleXMLElement
+     */
     public function getScheduleByTeam($team)
     {
         $rtn = new SimpleXMLElement("<games></games>");
         foreach($this->getXml() as $game) {
-            if (preg_match("/".$team."/i", $game->awayteam) || preg_match("/".$team."/i", $game->awayteam)) {
+            if (preg_match("/".$team."/i", $game->awayteam) || preg_match("/".$team."/i", $game->hometeam)) {
                 $newGame = $rtn->addChild("games");
                 $newGame->addChild('date', $game->date);
                 $newGame->addChild('hometeam', $game->hometeam);
