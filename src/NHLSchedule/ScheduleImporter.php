@@ -2,6 +2,7 @@
 namespace NHLSchedule;
 
 use DOMDocument;
+use SimpleXMLElement;
 
 /**
  * Class ScheduleImporter
@@ -118,4 +119,28 @@ class ScheduleImporter
     {
         return $this->xml->save($filePath);
     }
+
+    /**
+     * @param $filePath
+     * @return null
+     */
+    public function loadFromFile($filePath)
+    {
+        return $this->setXml(simplexml_load_file($filePath));
+    }
+
+    public function getScheduleByTeam($team)
+    {
+        $rtn = new SimpleXMLElement("<games></games>");
+        foreach($this->getXml() as $game) {
+            if (preg_match("/".$team."/i", $game->awayteam) || preg_match("/".$team."/i", $game->awayteam)) {
+                $newGame = $rtn->addChild("games");
+                $newGame->addChild('date', $game->date);
+                $newGame->addChild('hometeam', $game->hometeam);
+                $newGame->addChild('awayteam', $game->awayteam);
+            }
+        }
+        return $rtn;
+    }
 }
+
