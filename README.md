@@ -7,16 +7,18 @@ It is very easy to use and allows you to generate an XML file.
 
 ## Installation
 
-1. Add the following requirement line in your `Composer.json` file
-```
-   "require": {
-        "dvdpearson/nhl-schedule-lib": "dev-master"
-    },
-```
+1. Add the following requirement line in your `Composer.json` file:
+
+   ```
+      "require": {
+           "dvdpearson/nhl-schedule-lib": "dev-master"
+       },
+   ```
 2. Then install the package with composer with the following command:
-```
-php composer.phar install
-```
+
+   ```
+   php composer.phar install
+   ```
 
 ## Example
 ```
