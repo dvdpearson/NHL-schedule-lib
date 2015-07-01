@@ -52,8 +52,8 @@ class ScheduleImporter
         foreach ($out[0] as $game) {
             // Regex as of August 2014 (NHL.com)
             preg_match('|<div style="display:block;" class="skedStartDateSite">(.*?)</div><div style="display:none;"|si', $game, $gameDate);
-            preg_match('|<div class="teamName"><a style="border-bottom:1px dotted;" onclick="loadTeamSpotlight\(jQuery\(this\)\);" rel="(.*?)" shape="rect" href="javascript:void\(0\);">(.*?)</a></div></td><td colspan="1" rowspan="1" class="team"><!-- Home -->|si', $game, $awayTeam);
-            preg_match('|<!-- Home -->(.*?)<div class="teamName"><a style="border-bottom:1px dotted;" onclick="loadTeamSpotlight\(jQuery\(this\)\);" rel="(.*?)" shape="rect" href="javascript:void\(0\);">(.*?)</a></div></td>|si', $game, $homeTeam);
+            preg_match('|<div class="teamName"><a onclick="loadTeamSpotlight\(jQuery\(this\)\);" rel="(.*?)" shape="rect" href="javascript:void\(0\);">(.*?)</a></div></td><td colspan="1" rowspan="1" class="team"><!-- Home -->|si', $game, $awayTeam);
+            preg_match('|<!-- Home -->(.*?)<div class="teamName"><a onclick="loadTeamSpotlight\(jQuery\(this\)\);" rel="(.*?)" shape="rect" href="javascript:void\(0\);">(.*?)</a></div></td>|si', $game, $homeTeam);
             preg_match('|<!-- Time -->(.*?)"skedStartTimeEST">(.*?) ET</div><div style="display:none;" class="skedStartTimeLocal">(.*?)</div></td>|si', $game, $time);
 
             // Fixed Phoenix link missing issue (because the team was recently bought)
@@ -68,7 +68,7 @@ class ScheduleImporter
 
             $game = $dom->createElement("game");
             $game = $games->appendChild($game);
-            $game->appendChild($dom->createElement('date', date("d/m/Y H:i:s", strtotime($gameDate[1]." ".$time[2]))." ET"));
+            $game->appendChild($dom->createElement('date', date("d/m/Y H:i:s", strtotime($gameDate[1]." ".$time[2]))));
             $game->appendChild($dom->createElement('awayteam', $awayTeam[2]));
             $game->appendChild($dom->createElement('hometeam', $homeTeam[3]));
         }
