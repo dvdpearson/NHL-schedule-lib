@@ -1,6 +1,9 @@
 NHL Schedule Importer Library
 =============================
 
+![Code Climate](https://d3s6mut3hikguw.cloudfront.net/github/dvdpearson/NHL-schedule-lib/badges/gpa.svg)
+![Code Climate](https://d3s6mut3hikguw.cloudfront.net/github/dvdpearson/NHL-schedule-lib/badges/coverage.svg)
+
 NHL Schedule Importer parses NHL Schedule for a specified season through NHL.com website.
 
 It is very easy to use and allows you to generate an XML file.
